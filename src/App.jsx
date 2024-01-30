@@ -1,20 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Home from "./pages/Home"
-import Blog from "./pages/Blog"
+
 import Navbar from "./components/Navbar"
 import Search from "./components/Search"
 import Jobs from "./components/Jobs"
-
+import Job from "./components/Job"
 
 const  router= createBrowserRouter([
 
   {
     path:"/",
-    element: <Home />
+    element: <Jobs />
   },
   {
-    path:"blog/:id",
-    element: <Blog />
+    path:"/:id",
+    element: <Job />
   }
 ])
 
@@ -26,8 +25,7 @@ function App() {
     <>
         <Navbar />
         <Search />
-        <Jobs />
-    {/* <RouterProvider router={router} /> */}
+    <RouterProvider router={router} />
     </>
   )
 }
